@@ -1,5 +1,10 @@
 # mosparo for Joomla
 
+[![Release](https://img.shields.io/github/v/release/YGomiero/mosparo-joomla?color=green&label=release&style=for-the-badge)](https://github.com/YGomiero/mosparo-joomla/releases/latest)
+[![Joomla 6](https://img.shields.io/badge/Joomla-6.x-1769aa?style=for-the-badge)](docs/installation.en.md)
+[![PHP 8.3+](https://img.shields.io/badge/PHP-8.3%2B-777bb4?style=for-the-badge)](docs/installation.en.md)
+[![GPL 2.0 or later](https://img.shields.io/badge/license-GPL--2.0--or--later-blue?style=for-the-badge)](LICENSE.txt)
+
 [Français](README.md) · [English](README.en.md) · [Download](https://github.com/YGomiero/mosparo-joomla/releases/latest) · [Support](https://github.com/YGomiero/mosparo-joomla/issues)
 
 ![mosparo for Joomla: rules and statistics](docs/images/banner-jed-1200x525.png)
