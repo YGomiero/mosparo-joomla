@@ -11,7 +11,7 @@
 
 **Custom rules, statistics to refine them, and protection for Joomla forms.**
 
-> **Required: mosparo must already be installed, configured and reachable.** This package integrates Joomla with mosparo; it does not install the mosparo server. Provide a self-hosted instance or hosted mosparo service and a project with its keys. [Install mosparo](https://documentation.mosparo.io/docs/installation/).
+> **Required: mosparo must already be installed, configured and reachable.** This package integrates Joomla with mosparo; it does not install the mosparo server. Provide a self-hosted instance or hosted mosparo service and a project with its keys. [Install mosparo](https://documentation.mosparo.io/docs/category/installation).
 
 This package connects Joomla to your [mosparo](https://mosparo.io) instance. It includes **CAPTCHA – mosparo** for contact forms and **System – mosparo: logins** for the core login page, Login modules and administrator password login. Manage rules, submissions and statistics in mosparo.
 
