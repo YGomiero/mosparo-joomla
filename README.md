@@ -6,6 +6,8 @@
 
 **Des règles personnalisées, des statistiques pour les ajuster, et une protection des formulaires Joomla.**
 
+> **Prérequis indispensable : mosparo doit déjà être installé, configuré et accessible.** Ce paquet est une intégration Joomla ; il n’installe pas le serveur mosparo. Préparer une instance auto-hébergée ou un service mosparo hébergé et un projet avec ses clés. [Installer mosparo](https://documentation.mosparo.io/docs/installation/).
+
 Ce paquet relie Joomla à votre instance [mosparo](https://mosparo.io). Il réunit le plugin **CAPTCHA – mosparo** pour le contact et le plugin **Système – mosparo : connexions** pour la page de connexion, les modules Connexion natifs et l’administration. Les règles, les soumissions et les statistiques se consultent dans mosparo.
 
 Version **1.1.0** · Joomla **6.x**, PHP **8.3+** · Essais réalisés sur Joomla **6.2.0**, PHP **8.3.30**, mosparo **1.5.12** · Client PHP officiel **2.0.1**.
