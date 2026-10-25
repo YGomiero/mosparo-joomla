@@ -1,6 +1,6 @@
 # Installation and configuration
 
-[Français](installation.fr.md) · [Home](../README.en.md)
+[Français](installation.fr.md) · [Home](../README.md)
 
 ## Prepare mosparo
 

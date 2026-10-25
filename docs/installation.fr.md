@@ -1,6 +1,6 @@
 # Installer et configurer
 
-[English](installation.en.md) · [Accueil](../README.md)
+[English](installation.en.md) · [Accueil](../README.fr.md)
 
 ## Préparer mosparo
 

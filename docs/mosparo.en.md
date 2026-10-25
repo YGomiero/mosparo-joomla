@@ -1,6 +1,6 @@
 # Why mosparo? Custom rules and statistics
 
-[Français](mosparo.fr.md) · [Home](../README.en.md)
+[Français](mosparo.fr.md) · [Home](../README.md)
 
 ## The project
 

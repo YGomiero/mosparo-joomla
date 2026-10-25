@@ -1,6 +1,6 @@
 # Pourquoi mosparo ? Des règles et des statistiques
 
-[English](mosparo.en.md) · [Accueil](../README.md)
+[English](mosparo.en.md) · [Accueil](../README.fr.md)
 
 ## Le projet
 
