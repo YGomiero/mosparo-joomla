@@ -1,0 +1,9 @@
+{
+  "name": "ygomiero/mosparo-joomla",
+  "description": "mosparo spam protection for Joomla 6",
+  "type": "joomla-package",
+  "license": "GPL-2.0-or-later",
+  "require": {"php": ">=8.3", "mosparo/php-api-client": "2.0.1"},
+  "config": {"vendor-dir": "plugins/captcha/mosparo/dependencies", "sort-packages": true, "allow-plugins": false},
+  "minimum-stability": "stable"
+}

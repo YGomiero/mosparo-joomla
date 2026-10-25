@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="captcha" method="upgrade">
+  <name>PLG_CAPTCHA_MOSPARO</name><version>1.1.0</version><creationDate>2026-10</creationDate>
+  <author>Yann Gomiero</author><authorEmail>extensions@gomiero.me</authorEmail><authorUrl>https://github.com/YGomiero/mosparo-joomla</authorUrl>
+  <copyright>(C) 2026 Yann Gomiero; mosparo contributors</copyright>
+  <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+  <description>PLG_CAPTCHA_MOSPARO_XML_DESCRIPTION</description>
+  <namespace path="src">Joomla\Plugin\Captcha\Mosparo</namespace>
+  <files><folder plugin="mosparo">services</folder><folder>src</folder><folder>dependencies</folder><folder>language</folder><filename>LICENSE.txt</filename></files>
+  <media destination="plg_captcha_mosparo" folder="media"><folder>js</folder></media>
+  <languages folder="language"><language tag="en-GB">en-GB/plg_captcha_mosparo.ini</language><language tag="en-GB">en-GB/plg_captcha_mosparo.sys.ini</language><language tag="fr-FR">fr-FR/plg_captcha_mosparo.ini</language><language tag="fr-FR">fr-FR/plg_captcha_mosparo.sys.ini</language></languages>
+  <config><fields name="params"><fieldset name="basic" label="PLG_CAPTCHA_MOSPARO_FIELDSET_BASIC">
+    <field name="mosparo_url" type="url" label="PLG_CAPTCHA_MOSPARO_FIELD_URL_LABEL" description="PLG_CAPTCHA_MOSPARO_FIELD_URL_DESC" required="true" filter="url" />
+    <field name="mosparo_uuid" type="text" label="PLG_CAPTCHA_MOSPARO_FIELD_UUID_LABEL" description="PLG_CAPTCHA_MOSPARO_FIELD_UUID_DESC" required="true" />
+    <field name="mosparo_public_key" type="text" label="PLG_CAPTCHA_MOSPARO_FIELD_PUBLIC_KEY_LABEL" description="PLG_CAPTCHA_MOSPARO_FIELD_PUBLIC_KEY_DESC" required="true" />
+    <field name="mosparo_private_key" type="password" label="PLG_CAPTCHA_MOSPARO_FIELD_PRIVATE_KEY_LABEL" description="PLG_CAPTCHA_MOSPARO_FIELD_PRIVATE_KEY_DESC" required="true" filter="raw" />
+    <field name="load_css_resource" type="radio" layout="joomla.form.field.radio.switcher" default="1" label="PLG_CAPTCHA_MOSPARO_FIELD_LOAD_CSS_LABEL" description="PLG_CAPTCHA_MOSPARO_FIELD_LOAD_CSS_DESC"><option value="0">JNO</option><option value="1">JYES</option></field>
+    <field name="verify_ssl" type="radio" layout="joomla.form.field.radio.switcher" default="1" label="PLG_CAPTCHA_MOSPARO_FIELD_VERIFY_SSL_LABEL" description="PLG_CAPTCHA_MOSPARO_FIELD_VERIFY_SSL_DESC"><option value="0">JNO</option><option value="1">JYES</option></field>
+    <field name="required_fields" type="textarea" rows="5" filter="string" label="PLG_CAPTCHA_MOSPARO_REQUIRED_FIELDS_LABEL" description="PLG_CAPTCHA_MOSPARO_REQUIRED_FIELDS_DESC" default="jform[contact_name]&#10;jform[contact_email]&#10;jform[contact_subject]&#10;jform[contact_message]" />
+    <field name="ca_bundle" type="text" filter="string" label="PLG_CAPTCHA_MOSPARO_CA_BUNDLE" description="PLG_CAPTCHA_MOSPARO_CA_BUNDLE_DESC" />
+    <field name="documentation" type="note" label="PLG_CAPTCHA_MOSPARO_DOCUMENTATION" description="PLG_CAPTCHA_MOSPARO_DOCUMENTATION_DESC" />
+  </fieldset></fields></config>
+</extension>

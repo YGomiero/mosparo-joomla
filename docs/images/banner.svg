@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="525" viewBox="0 0 1200 525">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101e30"/><stop offset="1" stop-color="#163a45"/></linearGradient><linearGradient id="area" x2="0" y2="1"><stop stop-color="#64d8bd" stop-opacity=".4"/><stop offset="1" stop-color="#64d8bd" stop-opacity="0"/></linearGradient></defs>
+<rect width="1200" height="525" rx="0" fill="url(#bg)"/>
+<circle cx="1160" cy="30" r="230" fill="#62d8bd" opacity=".05"/>
+<g transform="translate(60 55) scale(1.12)">
+  <path d="M55.45,32.87a26,26,0,0,0-43-25.64L0,5.56,5.75,17.89A26,26,0,0,0,21.5,50.35l1.46-4A21.75,21.75,0,0,1,10,18.5l.3-.83L7.13,10.8l6.86.92.74-.78A21.71,21.71,0,0,1,51.44,31.4L20.07,19.91l-.74,2A18.89,18.89,0,0,0,54,36.85l7.39,2.71,1.46-4ZM32,42.15a14.65,14.65,0,0,1-9.3-16.74L50,35.38A14.67,14.67,0,0,1,32,42.15Z" fill="#ffffff"/>
+  <circle cx="26.82" cy="12.97" r="3.96" transform="translate(-2.43 18.65) rotate(-36.8)" fill="#ffffff"/>
+  <path d="M122.1,6.1a16.73,16.73,0,0,0-12.75,6.2A13.54,13.54,0,0,0,97.88,6.1,17,17,0,0,0,87,10.27V6.5H82.8V40.8H87v-22c0-4.69,5.93-8.46,10.84-8.46s9.14,3.8,9.14,8.46v22h4.24v-22c0-4.69,5.93-8.46,10.84-8.46s9.14,3.8,9.14,8.46v22h4.24v-22C135.48,11.8,129.48,6.1,122.1,6.1Z" fill="#ffffff"/>
+  <path d="M158.74,6a17.63,17.63,0,1,0,17.63,17.62A17.64,17.64,0,0,0,158.74,6Zm0,31a13.38,13.38,0,1,1,13.38-13.38A13.39,13.39,0,0,1,158.74,37Z" fill="#ffffff"/>
+  <path d="M330,6a17.63,17.63,0,1,0,17.63,17.62A17.64,17.64,0,0,0,330,6Zm0,31a13.38,13.38,0,1,1,13.38-13.38A13.39,13.39,0,0,1,330,37Z" fill="#ffffff"/>
+  <path d="M228.29,6a17.58,17.58,0,0,0-13.38,6.18V6.5h-4.24V50.35h4.24V35.09A17.62,17.62,0,1,0,228.29,6Zm0,31a13.38,13.38,0,1,1,13.38-13.38A13.39,13.39,0,0,1,228.29,37Z" fill="#ffffff"/>
+  <path d="M281.93,12.21a17.63,17.63,0,1,0,0,22.88V40.8h4.25V6.5h-4.25ZM268.55,37a13.38,13.38,0,1,1,13.38-13.38A13.4,13.4,0,0,1,268.55,37Z" fill="#ffffff"/>
+  <path d="M298.65,10.33V6.5H294.4V40.8h4.25V20.25a9.52,9.52,0,0,1,9.51-9.52H312V6.49h-3.83A13.7,13.7,0,0,0,298.65,10.33Z" fill="#ffffff"/>
+  <path d="M193.67,20.94c-6.07-2.41-8.08-3.61-8.08-6,0-1.83,1.8-4.72,6.63-4.72s6.95,1.76,7,1.77l2.94-3c-.3-.31-3.19-3-9.91-3-7.07,0-10.88,4.61-10.88,9,0,5.61,5.23,7.69,10.76,9.9,5.33,2.12,6.42,4.38,6.42,7.13,0,1.83-1.8,4.72-6.63,4.72a16.43,16.43,0,0,1-8.6-2.27L180.86,38a20.27,20.27,0,0,0,11,3c7.06,0,10.88-4.61,10.88-9C202.77,26.93,199.88,23.41,193.67,20.94Z" fill="#ffffff"/>
+</g>
+<g font-family="Arial, sans-serif">
+<text x="62" y="151" fill="#a9c4ce" font-size="24" letter-spacing="3">FOR JOOMLA</text>
+<text x="58" y="247" fill="#fff" font-size="56" font-weight="700">Your rules.</text>
+<text x="58" y="313" fill="#73e0c1" font-size="56" font-weight="700">Your statistics.</text>
+<text x="62" y="367" fill="#d1dfe4" font-size="21">Spam protection you can understand.</text>
+<g fill="none" stroke="#5d7b88"><rect x="60" y="423" width="137" height="44" rx="22"/><rect x="210" y="423" width="137" height="44" rx="22"/><rect x="360" y="423" width="137" height="44" rx="22"/></g>
+<g fill="#edf6f7" font-size="17" text-anchor="middle"><text x="129" y="451">Contact</text><text x="279" y="451">Site login</text><text x="429" y="451">Admin login</text></g>
+<rect x="650" y="63" width="490" height="398" rx="22" fill="#fff"/>
+<text x="682" y="111" fill="#173446" font-size="22" font-weight="700">Observe. Adjust. Protect.</text>
+<rect x="682" y="138" width="426" height="54" rx="10" fill="#eef6f5"/>
+<circle cx="706" cy="165" r="8" fill="#25a78b"/><text x="728" y="172" font-size="17" fill="#173446">Custom rules</text>
+<path d="m1068 161 6 6 12-13" fill="none" stroke="#25a78b" stroke-width="3"/>
+<g stroke="#e6edef"><path d="M682 238H1108M682 282H1108M682 326H1108M682 370H1108"/></g>
+<path d="M688 350 735 340 782 350 829 300 876 314 923 267 970 285 1017 235 1064 251 1102 216V370H688Z" fill="url(#area)"/>
+<path d="M688 350 735 340 782 350 829 300 876 314 923 267 970 285 1017 235 1064 251 1102 216" fill="none" stroke="#25a78b" stroke-width="4" stroke-linejoin="round"/>
+<path d="M688 360 735 356 782 333 829 354 876 350 923 360 970 341 1017 354 1064 347 1102 355" fill="none" stroke="#e69b84" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="691" cy="408" r="5" fill="#25a78b"/><text x="705" y="414" font-size="15" fill="#496473">Valid</text><circle cx="789" cy="408" r="5" fill="#e69b84"/><text x="803" y="414" font-size="15" fill="#496473">Spam</text><text x="1108" y="414" text-anchor="end" fill="#738891" font-size="12">Illustration</text>
+</g></svg>

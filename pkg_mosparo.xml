@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="package" method="upgrade">
+  <name>PKG_MOSPARO</name>
+  <packagename>mosparo</packagename>
+  <version>1.1.0</version>
+  <creationDate>2026-10</creationDate>
+  <author>Yann Gomiero</author>
+  <authorEmail>extensions@gomiero.me</authorEmail>
+  <authorUrl>https://github.com/YGomiero/mosparo-joomla</authorUrl>
+  <copyright>(C) 2026 Yann Gomiero; mosparo contributors</copyright>
+  <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+  <packager>Yann Gomiero</packager>
+  <packagerurl>https://github.com/YGomiero/mosparo-joomla</packagerurl>
+  <description>PKG_MOSPARO_DESCRIPTION</description>
+  <scriptfile>script.php</scriptfile>
+  <blockChildUninstall>true</blockChildUninstall>
+  <files folder="packages">
+    <file type="plugin" id="mosparo" group="captcha">plg_captcha_mosparo.zip</file>
+    <file type="plugin" id="mosparologin" group="system">plg_system_mosparologin.zip</file>
+  </files>
+  <languages folder="language">
+    <language tag="en-GB">en-GB/pkg_mosparo.sys.ini</language>
+    <language tag="fr-FR">fr-FR/pkg_mosparo.sys.ini</language>
+  </languages>
+  <updateservers>
+    <server type="extension" priority="1" name="mosparo for Joomla — GitHub releases">https://github.com/YGomiero/mosparo-joomla/releases/latest/download/update.xml</server>
+  </updateservers>
+</extension>

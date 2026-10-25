@@ -1,0 +1,38 @@
+name: Validate and build
+on:
+  push:
+    branches: [main]
+    tags: ['*']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: shivammathur/setup-php@ec406be512d7077f68eed36e63f4d91bc006edc4 # 2.35.4
+        with:
+          php-version: '8.3'
+          extensions: curl, zip, mbstring, simplexml
+          tools: composer:v2
+          coverage: none
+      - run: composer validate --strict --no-check-all
+      - run: composer install --no-dev --prefer-dist --no-interaction
+      - run: node tests/frontend.cjs
+      - name: PHP syntax
+        run: find plugins tests tools -name '*.php' -not -path '*/dependencies/*' -print0 | xargs -0 -n1 php -l
+      - name: Joomla libraries for regression tests
+        run: |
+          curl --fail --location --retry 3 'https://downloads.joomla.org/cms/joomla6/6-2-0/Joomla_6-2-0-Stable-Full_Package.zip' -o /tmp/joomla.zip
+          unzip -q /tmp/joomla.zip -d /tmp/joomla
+          php tests/run.php /tmp/joomla
+      - run: php tools/build.php
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: mosparo-joomla-package
+          path: |
+            dist/pkg_mosparo-*.zip
+            dist/update.xml
+            dist/SHA256SUMS

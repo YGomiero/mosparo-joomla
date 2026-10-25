@@ -1,0 +1,5 @@
+/plugins/captcha/mosparo/dependencies/
+/dist/
+/.env*
+/work/
+*.log
