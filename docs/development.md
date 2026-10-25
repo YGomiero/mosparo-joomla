@@ -34,8 +34,16 @@ La recette de publication doit couvrir les quatre surfaces, les refus côté ser
 
 1. Update versions and changelog, review dependency changes and licences.
 2. Run CI and local integration checks against the exact final ZIP.
-3. Tag the reviewed commit with the manifest version (for example `1.1.0`).
-4. Publish the ZIP, `update.xml` and `SHA256SUMS` together in the stable GitHub release.
+3. Update `.github/release-notes.md`, then tag the reviewed commit with the manifest version (for example `1.1.1`). Pushing a new stable numeric tag triggers publication.
+4. `Publish stable release` runs the shared test/build workflow, verifies the package identity and checksum, then creates the release with ZIP, `update.xml` and `SHA256SUMS`. An existing release is never overwritten by this workflow.
 5. Verify public downloads and Joomla update detection, then retain the final test record outside the source repository.
 
-CI builds and uploads a workflow artifact; it does not automatically publish a release. Release publication is a deliberate maintainer action. JED Checker is a heuristic aid, not JED approval. Bundled upstream MIT files must not be falsely relabelled GPL to silence its alerts.
+The `Joomla update feed` workflow also handles a stable release published manually: it downloads the actual installable ZIP, checks its manifest/version, computes its SHA-256 and uploads its feed and checksum. It never replaces the ZIP. A release created with GitHub's workflow token does not trigger a second workflow; the tag workflow therefore includes the metadata itself. Prereleases are excluded.
+
+Both release workflows can be started manually from **Actions → Run workflow** as a rehearsal. Manual runs only validate and produce artifacts; they do not publish or change a release. The build workflow also runs on main and pull requests. No custom token is needed: the publishing jobs use GitHub's built-in token with repository contents write permission.
+
+The feed explicitly identifies the package as `pkg_mosparo`, type `package`, **client_id 0**. Without this value Joomla defaults to administrator client 1, so the update may be downloaded but never associated with the installed package. The regression check verifies this identity, the versioned download URL and the actual ZIP hash.
+
+En français : mettre à jour les trois manifestes, le numéro d’asset, l’historique et les notes de release, puis pousser un nouveau tag stable correspondant à la version. L’action construit, teste et publie les trois fichiers de distribution. Une release manuelle déclenche aussi la génération du flux depuis son ZIP. Les lancements manuels des actions sont des essais sans publication. Le propriétaire du dépôt garde la maîtrise de la publication en créant le tag ; ne jamais déplacer un tag déjà publié.
+
+La **JED et le gestionnaire de mises à jour Joomla sont distincts** : ces actions alimentent Joomla. Elles ne créent pas une fiche JED et ne modifient pas automatiquement son numéro de version. Après acceptation de la fiche, le mainteneur doit actualiser ses informations dans la JED lors des publications. JED Checker est une aide heuristique, pas une approbation JED. Ne pas réétiqueter GPL les fichiers MIT des bibliothèques pour masquer des alertes.

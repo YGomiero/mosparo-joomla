@@ -40,6 +40,8 @@ Joomla updates the **complete package** through its declared update server. Each
 
 ## Scope
 
+Stable version tags trigger a GitHub Action that tests, builds and publishes the package and update metadata. A separate workflow generates metadata for manually published stable releases. See the [release procedure](docs/development.md#release). Once a JED listing is approved, its information must still be maintained in the directory: Joomla's update feed does not automatically edit the JED listing.
+
 Server verification runs before authentication on native password login routes. Only the username goes to mosparo for those forms; passwords stay in Joomla, including when “Show password” is used. Passkeys, remembered sessions, API authentication and third-party login endpoints are outside this integration.
 
 The standard contact profile covers name, email, subject and message. Registration, username reminder and password-reset request profiles are also included but require acceptance testing on your configuration. Custom fields and third-party forms need their own integration and tests. Statistics remain in mosparo; this package does not add a Joomla statistics dashboard.

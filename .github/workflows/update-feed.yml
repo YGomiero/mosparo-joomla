@@ -1,0 +1,52 @@
+name: Joomla update feed
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing stable release to check (no upload during manual runs)
+        required: true
+        default: '1.1.0'
+permissions:
+  contents: read
+jobs:
+  feed:
+    if: github.event_name == 'workflow_dispatch' || (!github.event.release.prerelease && !github.event.release.draft)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: shivammathur/setup-php@ec406be512d7077f68eed36e63f4d91bc006edc4 # 2.35.4
+        with:
+          php-version: '8.3'
+          extensions: zip, simplexml
+          coverage: none
+      - name: Generate metadata from published ZIP
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
+          EVENT_NAME: ${{ github.event_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$RELEASE_TAG" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo 'Invalid stable tag'; exit 1; }
+          mkdir -p dist
+          gh release download "$RELEASE_TAG" --pattern "pkg_mosparo-$RELEASE_TAG.zip" --dir dist
+          php tools/update-feed.php "dist/pkg_mosparo-$RELEASE_TAG.zip" "$RELEASE_TAG" dist
+          (cd dist && sha256sum --check SHA256SUMS)
+          if [[ "$EVENT_NAME" == release ]]; then
+            gh release upload "$RELEASE_TAG" dist/update.xml dist/SHA256SUMS --clobber
+          else
+            echo 'Published ZIP checked. Metadata generated; no release assets modified.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: verified-update-feed
+          path: |
+            dist/update.xml
+            dist/SHA256SUMS

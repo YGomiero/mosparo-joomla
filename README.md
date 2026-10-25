@@ -40,6 +40,8 @@ La protection des connexions est désactivée par défaut. Les réglages existan
 
 Joomla suit le **paquet complet** grâce au serveur de mise à jour déclaré dans son manifeste. Chaque release fournit le ZIP, `update.xml` et `SHA256SUMS`. Le flux stable se trouve à [cette adresse](https://github.com/YGomiero/mosparo-joomla/releases/latest/download/update.xml). La mise à jour du serveur mosparo reste indépendante de celle de cette extension.
 
+Une action GitHub teste, construit et publie ces fichiers à chaque nouveau tag stable. Une seconde gère le flux des releases publiées manuellement. [Procédure de publication](docs/development.md#release). La fiche JED, lorsqu’elle sera acceptée, restera à actualiser dans l’annuaire : ce flux assure les mises à jour dans Joomla, pas l’édition automatique de la fiche JED.
+
 ## Portée
 
 La validation est effectuée côté serveur, avant l’authentification pour les connexions natives par mot de passe. Seul l’identifiant est transmis à mosparo pour ces connexions ; les mots de passe restent dans Joomla, même lorsque le bouton d’affichage du mot de passe est utilisé. Les clés d’accès, cookies « Se rappeler de moi », API et formulaires de connexion d’extensions tierces ne sont pas interceptés.

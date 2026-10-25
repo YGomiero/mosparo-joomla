@@ -1,0 +1,61 @@
+name: Publish stable release
+on:
+  push:
+    tags: ['[0-9]*.[0-9]*.[0-9]*']
+  workflow_dispatch: # Full rehearsal on the selected ref; never publishes.
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  validate-build:
+    uses: ./.github/workflows/build.yml
+  publish:
+    needs: validate-build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: mosparo-joomla-package
+          path: dist
+      - uses: shivammathur/setup-php@ec406be512d7077f68eed36e63f4d91bc006edc4 # 2.35.4
+        with:
+          php-version: '8.3'
+          extensions: zip, simplexml
+          coverage: none
+      - name: Verify release metadata
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+          EVENT_NAME: ${{ github.event_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          version=$(php -r 'echo simplexml_load_file("pkg_mosparo.xml")->version;')
+          [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          if [[ "$EVENT_NAME" == push ]]; then
+            [[ "$RELEASE_TAG" == "$version" ]] || { echo 'Tag and manifest differ'; exit 1; }
+          fi
+          php tests/update-feed.php
+          (cd dist && sha256sum --check SHA256SUMS)
+          echo "RELEASE_VERSION=$version" >> "$GITHUB_ENV"
+      - name: Publish complete stable release
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          # gh release create refuses an existing release; published ZIPs are never replaced.
+          gh release create "$RELEASE_VERSION" --verify-tag --latest \
+            --title "mosparo for Joomla $RELEASE_VERSION" --notes-file .github/release-notes.md \
+            "dist/pkg_mosparo-$RELEASE_VERSION.zip" dist/update.xml dist/SHA256SUMS
+      - name: Rehearsal summary
+        if: github.event_name == 'workflow_dispatch'
+        run: echo 'Build, tests and release assets verified. Manual rehearsal does not publish.' >> "$GITHUB_STEP_SUMMARY"

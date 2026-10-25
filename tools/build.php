@@ -33,9 +33,6 @@ foreach (glob($root.'/language/*/*.ini') as $file) $zip->addFile($file, str_repl
 foreach (['plg_captcha_mosparo.zip','plg_system_mosparologin.zip'] as $file) $zip->addFile($out.'/'.$file, 'packages/'.$file);
 for ($i = 0; $i < $zip->numFiles; $i++) $zip->setMtimeIndex($i,1792886400);
 $zip->close();
-$hash = hash_file('sha256', $out.'/'.$name);
-$url = 'https://github.com/YGomiero/mosparo-joomla/releases/download/'.$version.'/'.$name;
-$xml = '<?xml version="1.0" encoding="utf-8"?>' . "\n" . '<updates><update><name>mosparo for Joomla</name><description>mosparo spam protection for Joomla 6</description><element>pkg_mosparo</element><type>package</type><version>'.$version.'</version><infourl title="mosparo for Joomla">https://github.com/YGomiero/mosparo-joomla</infourl><downloads><downloadurl type="full" format="zip">'.$url.'</downloadurl></downloads><tags><tag>stable</tag></tags><maintainer>Yann Gomiero</maintainer><maintainerurl>https://github.com/YGomiero/mosparo-joomla</maintainerurl><targetplatform name="joomla" version="6\\.[0-9]+"/><php_minimum>8.3</php_minimum><sha256>'.$hash.'</sha256></update></updates>' . "\n";
-file_put_contents($out.'/update.xml',$xml);
-file_put_contents($out.'/SHA256SUMS',$hash.'  '.$name."\n");
-echo $out.'/'.$name.PHP_EOL.$hash.PHP_EOL;
+require_once __DIR__ . '/update-feed.php';
+writeUpdateFeed($out.'/'.$name, $version, $out);
+echo $out.'/'.$name.PHP_EOL.hash_file('sha256', $out.'/'.$name).PHP_EOL;
