@@ -23,6 +23,8 @@ function zipTree(string $source, string $target): void {
 }
 if (!is_file($root . '/plugins/captcha/mosparo/dependencies/autoload.php')) throw new RuntimeException('Run composer install first.');
 foreach (['captcha/mosparo', 'system/mosparologin'] as $plugin) {
+    $manifest = simplexml_load_file($root . '/plugins/' . $plugin . '/' . basename($plugin) . '.xml');
+    if ((string) $manifest->version !== $version) throw new RuntimeException('Package and plugin versions differ.');
     zipTree($root . '/plugins/' . $plugin, $out . '/plg_' . str_replace('/', '_', $plugin) . '.zip');
 }
 $name = 'pkg_mosparo-' . $version . '.zip';

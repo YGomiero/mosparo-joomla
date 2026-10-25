@@ -38,9 +38,9 @@ Login protection is off by default. Upgrading preserves existing CAPTCHA setting
 
 Joomla updates the **complete package** through its declared update server. Each release contains the ZIP, `update.xml` and `SHA256SUMS`. The [stable update feed](https://github.com/YGomiero/mosparo-joomla/releases/latest/download/update.xml) points to a versioned archive. Update the mosparo server separately.
 
-## Scope
-
 Stable version tags trigger a GitHub Action that tests, builds and publishes the package and update metadata. A separate workflow generates metadata for manually published stable releases. See the [release procedure](docs/development.md#release). Once a JED listing is approved, its information must still be maintained in the directory: Joomla's update feed does not automatically edit the JED listing.
+
+## Scope
 
 Server verification runs before authentication on native password login routes. Only the username goes to mosparo for those forms; passwords stay in Joomla, including when “Show password” is used. Passkeys, remembered sessions, API authentication and third-party login endpoints are outside this integration.
 
