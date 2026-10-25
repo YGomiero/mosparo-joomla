@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="plugin" group="system" method="upgrade">
-  <name>PLG_SYSTEM_MOSPAROLOGIN</name><version>1.1.0</version><creationDate>2026-10</creationDate>
+  <name>PLG_SYSTEM_MOSPAROLOGIN</name><version>1.1.1</version><creationDate>2026-10</creationDate>
   <author>Yann Gomiero</author><authorEmail>extensions@gomiero.me</authorEmail><authorUrl>https://github.com/YGomiero/mosparo-joomla</authorUrl>
   <copyright>(C) 2026 Yann Gomiero</copyright><license>GNU General Public License version 2 or later; see LICENSE.txt</license>
   <description>PLG_SYSTEM_MOSPAROLOGIN_DESCRIPTION</description>

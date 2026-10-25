@@ -1,5 +1,10 @@
 # Changelog / Historique
 
+## 1.1.1 — 2026-10-25
+
+- Align the installed package name, update feed and release title with the JED listing name: mosparo. No change to protection behaviour.
+- Harmonisation du nom du paquet installé, du flux et de la release avec la fiche JED : mosparo. Aucun changement de fonctionnement.
+
 ## 1.1.0 — 2026-10-25
 
 - Package with CAPTCHA and optional native site/module/administrator login protection; Joomla package update feed with SHA-256.

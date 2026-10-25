@@ -2,7 +2,7 @@
 <extension type="package" method="upgrade">
   <name>PKG_MOSPARO</name>
   <packagename>mosparo</packagename>
-  <version>1.1.0</version>
+  <version>1.1.1</version>
   <creationDate>2026-10</creationDate>
   <author>Yann Gomiero</author>
   <authorEmail>extensions@gomiero.me</authorEmail>
@@ -23,6 +23,6 @@
     <language tag="fr-FR">fr-FR/pkg_mosparo.sys.ini</language>
   </languages>
   <updateservers>
-    <server type="extension" priority="1" name="mosparo for Joomla — GitHub releases">https://github.com/YGomiero/mosparo-joomla/releases/latest/download/update.xml</server>
+    <server type="extension" priority="1" name="mosparo — GitHub releases">https://github.com/YGomiero/mosparo-joomla/releases/latest/download/update.xml</server>
   </updateservers>
 </extension>

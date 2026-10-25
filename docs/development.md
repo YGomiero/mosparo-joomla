@@ -18,7 +18,7 @@ php tools/build.php
 php tests/run.php /path/to/joomla
 ```
 
-`dist/pkg_mosparo-1.1.0.zip` is the installable artifact. Runtime dependencies and original licences are included; upstream tests/documentation/development files are excluded. Source GitHub archives lack installed dependencies and the package's nested ZIPs. File ordering and ZIP timestamps are fixed; compare builds using the same PHP/ZIP toolchain.
+`dist/pkg_mosparo-1.1.1.zip` is the installable artifact. Runtime dependencies and original licences are included; upstream tests/documentation/development files are excluded. Source GitHub archives lack installed dependencies and the package's nested ZIPs. File ordering and ZIP timestamps are fixed; compare builds using the same PHP/ZIP toolchain.
 
 Le constructeur produit le ZIP installable, le flux Joomla et la somme SHA-256. Les versions se trouvent dans les trois manifestes, le chargeur d’assets et la documentation. Le flux utilise un téléchargement versionné ; sa copie stable est un asset de la dernière release. Ne jamais remplacer silencieusement le ZIP d’une version publiée : créer une nouvelle version.
 

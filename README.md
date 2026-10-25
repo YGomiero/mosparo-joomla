@@ -1,4 +1,4 @@
-# mosparo for Joomla
+# mosparo
 
 [![Release](https://img.shields.io/github/v/release/YGomiero/mosparo-joomla?color=green&label=release&style=for-the-badge)](https://github.com/YGomiero/mosparo-joomla/releases/latest)
 [![Joomla 6](https://img.shields.io/badge/Joomla-6.x-1769aa?style=for-the-badge)](docs/installation.en.md)
@@ -7,7 +7,7 @@
 
 [English](README.md) · [Français](README.fr.md) · [Download](https://github.com/YGomiero/mosparo-joomla/releases/latest) · [Support](https://github.com/YGomiero/mosparo-joomla/issues)
 
-![mosparo for Joomla: rules and statistics](docs/images/banner-jed-1200x525.png)
+![mosparo: rules and statistics](docs/images/banner-jed-1200x525.png)
 
 **Custom rules, statistics to refine them, and protection for Joomla forms.**
 
@@ -15,11 +15,11 @@
 
 This package connects Joomla to your [mosparo](https://mosparo.io) instance. It includes **CAPTCHA – mosparo** for contact forms and **System – mosparo: logins** for the core login page, Login modules and administrator password login. Manage rules, submissions and statistics in mosparo.
 
-Version **1.1.0** · Joomla **6.x**, PHP **8.3+** · Tested with Joomla **6.2.0**, PHP **8.3.30**, mosparo **1.5.12** · Official PHP client **2.0.1**.
+Version **1.1.1** · Joomla **6.x**, PHP **8.3+** · Tested with Joomla **6.2.0**, PHP **8.3.30**, mosparo **1.5.12** · Official PHP client **2.0.1**.
 
 ## Install
 
-1. Download **pkg_mosparo-1.1.0.zip** from the release. GitHub's “Source code” archive cannot be installed in Joomla.
+1. Download **pkg_mosparo-1.1.1.zip** from the release. GitHub's “Source code” archive cannot be installed in Joomla.
 2. Upload the package through **System → Install → Extensions**.
 3. Configure and enable **CAPTCHA – mosparo** with the project URL, UUID and both keys. Add the website domain to the project's allowed hosts.
 4. Select mosparo in the Contacts component CAPTCHA setting and test a contact submission.

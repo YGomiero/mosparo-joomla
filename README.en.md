@@ -1,4 +1,4 @@
-# mosparo for Joomla
+# mosparo
 
 The English documentation is now the [main README](README.md).
 

@@ -1,4 +1,4 @@
-# mosparo for Joomla
+# mosparo
 
 [![Release](https://img.shields.io/github/v/release/YGomiero/mosparo-joomla?color=green&label=release&style=for-the-badge)](https://github.com/YGomiero/mosparo-joomla/releases/latest)
 [![Joomla 6](https://img.shields.io/badge/Joomla-6.x-1769aa?style=for-the-badge)](docs/installation.fr.md)
@@ -7,7 +7,7 @@
 
 [English](README.md) · [Français](README.fr.md) · [Téléchargement](https://github.com/YGomiero/mosparo-joomla/releases/latest) · [Assistance](https://github.com/YGomiero/mosparo-joomla/issues)
 
-![mosparo pour Joomla : règles et statistiques](docs/images/banner-jed-1200x525.png)
+![mosparo : règles et statistiques](docs/images/banner-jed-1200x525.png)
 
 **Des règles personnalisées, des statistiques pour les ajuster, et une protection des formulaires Joomla.**
 
@@ -15,11 +15,11 @@
 
 Ce paquet relie Joomla à votre instance [mosparo](https://mosparo.io). Il réunit le plugin **CAPTCHA – mosparo** pour le contact et le plugin **Système – mosparo : connexions** pour la page de connexion, les modules Connexion natifs et l’administration. Les règles, les soumissions et les statistiques se consultent dans mosparo.
 
-Version **1.1.0** · Joomla **6.x**, PHP **8.3+** · Essais réalisés sur Joomla **6.2.0**, PHP **8.3.30**, mosparo **1.5.12** · Client PHP officiel **2.0.1**.
+Version **1.1.1** · Joomla **6.x**, PHP **8.3+** · Essais réalisés sur Joomla **6.2.0**, PHP **8.3.30**, mosparo **1.5.12** · Client PHP officiel **2.0.1**.
 
 ## Installer
 
-1. Télécharger **pkg_mosparo-1.1.0.zip** dans la release ; le ZIP « Source code » de GitHub n’est pas installable dans Joomla.
+1. Télécharger **pkg_mosparo-1.1.1.zip** dans la release ; le ZIP « Source code » de GitHub n’est pas installable dans Joomla.
 2. Installer le paquet dans **Système → Installation → Extensions**.
 3. Configurer et activer **CAPTCHA – mosparo** avec l’URL, l’UUID et les deux clés de votre projet. Ajouter le domaine du site aux hôtes autorisés de ce projet.
 4. Choisir mosparo comme CAPTCHA dans les options du composant Contacts, puis essayer un contact.

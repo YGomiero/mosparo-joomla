@@ -1,3 +1,7 @@
+Package display name aligned with the JED listing: **mosparo**. Protection behaviour is unchanged.
+
+Nom affiché harmonisé avec la fiche JED : **mosparo**. Fonctionnement de la protection inchangé.
+
 ## Français
 
 Consulter [l’historique des changements](https://github.com/YGomiero/mosparo-joomla/blob/main/CHANGELOG.md) et le [guide d’installation](https://github.com/YGomiero/mosparo-joomla/blob/main/docs/installation.fr.md).

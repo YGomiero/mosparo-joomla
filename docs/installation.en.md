@@ -10,7 +10,7 @@ PHP needs cURL, JSON and Joomla's required extensions. Dependencies are bundled:
 
 ## Install
 
-Back up files and database. Install `pkg_mosparo-1.1.0.zip` using Joomla's installer. This package contains two plugins and one update source. Do not install its internal ZIPs separately. Uninstall the package to remove both plugins; the remote mosparo project remains intact.
+Back up files and database. Install `pkg_mosparo-1.1.1.zip` using Joomla's installer. This package contains two plugins and one update source. Do not install its internal ZIPs separately. Uninstall the package to remove both plugins; the remote mosparo project remains intact.
 
 The `captcha/mosparo` element and namespace are retained for upgrading an existing 1.0.2 plugin. Check configuration after installation. The original development source website was not changed.
 

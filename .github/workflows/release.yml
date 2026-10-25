@@ -54,7 +54,7 @@ jobs:
           set -euo pipefail
           # gh release create refuses an existing release; published ZIPs are never replaced.
           gh release create "$RELEASE_VERSION" --verify-tag --latest \
-            --title "mosparo for Joomla $RELEASE_VERSION" --notes-file .github/release-notes.md \
+            --title "mosparo $RELEASE_VERSION" --notes-file .github/release-notes.md \
             "dist/pkg_mosparo-$RELEASE_VERSION.zip" dist/update.xml dist/SHA256SUMS
       - name: Rehearsal summary
         if: github.event_name == 'workflow_dispatch'

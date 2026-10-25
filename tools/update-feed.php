@@ -27,9 +27,9 @@ function writeUpdateFeed(string $archive, string $version, string $output): void
     // Packages use client_id 0 in the database; the updater XML uses <client>site</client>.
     // <client_id> is ignored by current Joomla and would leave the administrator default.
     $xml = '<?xml version="1.0" encoding="utf-8"?>' . "\n"
-        . '<updates><update><name>mosparo for Joomla</name><description>mosparo spam protection for Joomla 6</description>'
+        . '<updates><update><name>mosparo</name><description>mosparo spam protection for Joomla 6</description>'
         . '<element>pkg_mosparo</element><type>package</type><client>site</client><version>' . $version . '</version>'
-        . '<infourl title="mosparo for Joomla">' . $repo . '</infourl>'
+        . '<infourl title="mosparo">' . $repo . '</infourl>'
         . '<downloads><downloadurl type="full" format="zip">' . $url . '</downloadurl></downloads>'
         . '<tags><tag>stable</tag></tags><maintainer>Yann Gomiero</maintainer><maintainerurl>' . $repo . '</maintainerurl>'
         . '<targetplatform name="joomla" version="6\.[0-9]+"/><php_minimum>8.3</php_minimum><sha256>' . $hash . '</sha256>'

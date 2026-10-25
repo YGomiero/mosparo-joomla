@@ -10,7 +10,7 @@ Le serveur PHP doit disposer de cURL, JSON et des extensions nécessaires à Joo
 
 ## Installer le paquet
 
-Sauvegarder fichiers et base. Installer le ZIP `pkg_mosparo-1.1.0.zip` via l’installateur Joomla. Le paquet regroupe deux plugins et une seule source de mise à jour. Ne pas installer séparément les ZIP internes. La désinstallation s’effectue sur le paquet et retire les deux plugins ; elle ne supprime pas le projet sur le serveur mosparo.
+Sauvegarder fichiers et base. Installer le ZIP `pkg_mosparo-1.1.1.zip` via l’installateur Joomla. Le paquet regroupe deux plugins et une seule source de mise à jour. Ne pas installer séparément les ZIP internes. La désinstallation s’effectue sur le paquet et retire les deux plugins ; elle ne supprime pas le projet sur le serveur mosparo.
 
 Sur un site possédant déjà `captcha/mosparo` 1.0.2, l’élément et son espace de noms sont conservés pour permettre la mise à niveau. Contrôler les réglages après installation. Le site source utilisé pour le développement n’a pas été modifié.
 
