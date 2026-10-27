@@ -42,4 +42,17 @@ foreach([['valid'=>true,'verificationSignature'=>$signature,'verifiedFields'=>['
  $result=$client->verifySubmission($fields,'submission','validation');
  check($result->isSubmittable()===($i===0),'official API response signature case '.$i);
 }
+require $repo.'/plugins/system/mosparologin/src/Service/LoginRecovery.php';
+$base = new ReflectionProperty(\Joomla\CMS\Uri\Uri::class, 'base');
+$base->setValue(null, ['prefix'=>'https://example.test', 'path'=>'/joomla']);
+$login = 'https://example.test/joomla/index.php?option=com_users&view=login';
+check(\Yann\Plugin\System\Mosparologin\Service\LoginRecovery::url(false, '') === $login, 'fresh site login keeps installation subdirectory');
+$return = base64_encode('https://example.test/joomla/index.php?option=com_identitymanager&task=auth.resumeRelink');
+check(\Yann\Plugin\System\Mosparologin\Service\LoginRecovery::url(false, $return) === $login.'&return='.rawurlencode($return), 'local account confirmation destination preserved');
+foreach (['https://other.example/', '//other.example/', 'javascript:alert(1)', "https://example.test/joomla/\r\nInjected: yes", 'https://example.test/joomla/\\other', str_repeat('x', 2049)] as $unsafe) {
+    check(\Yann\Plugin\System\Mosparologin\Service\LoginRecovery::url(false, base64_encode($unsafe)) === $login, 'unsafe return discarded');
+}
+check(\Yann\Plugin\System\Mosparologin\Service\LoginRecovery::url(false, '!invalid!') === $login, 'malformed return discarded');
+$base->setValue(null, ['prefix'=>'https://example.test', 'path'=>'/joomla/administrator']);
+check(\Yann\Plugin\System\Mosparologin\Service\LoginRecovery::url(true, '') === 'https://example.test/joomla/administrator/index.php', 'administrator returns to a fresh login GET');
 echo "$count checks passed.\n";

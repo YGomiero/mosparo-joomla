@@ -10,7 +10,7 @@ PHP needs cURL, JSON and Joomla's required extensions. Dependencies are bundled:
 
 ## Install
 
-Back up files and database. Install `pkg_mosparo-1.1.1.zip` using Joomla's installer. This package contains two plugins and one update source. Do not install its internal ZIPs separately. Uninstall the package to remove both plugins; the remote mosparo project remains intact.
+Back up files and database. Install `pkg_mosparo-1.1.2.zip` using Joomla's installer. This package contains two plugins and one update source. Do not install its internal ZIPs separately. Uninstall the package to remove both plugins; the remote mosparo project remains intact.
 
 The `captcha/mosparo` element and namespace are retained for upgrading an existing 1.0.2 plugin. Check configuration after installation. The original development source website was not changed.
 
@@ -51,7 +51,7 @@ Repair configuration/certificates, re-enable and retest. Password checks, MFA, s
 
 - **Missing widget:** check plugin status, protection switches, blocked scripts and browser errors. Third-party overrides may need adaptation.
 - **Rejection after a green checkbox:** check keys, PHP trust store, outgoing connectivity and verified fields; inspect verification details in mosparo.
-- **HTTP 403:** return to the form and reload; missing or invalid tokens cannot establish validation.
+- **Failed or expired sign-in verification:** a fresh login form displays an explanation. Enter your credentials again and repeat the mosparo verification. No session is authenticated after rejection; passwords and old tokens are neither stored nor forwarded. An expired Joomla session or an invalid request can still return HTTP 403: open the login form again.
 - **Legitimate content blocked:** identify the matching rule and score in mosparo, then refine it.
 - **Local HTTPS:** trust the local CA in the browser and PHP. Use the CA option while retaining TLS verification.
 

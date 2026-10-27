@@ -65,6 +65,6 @@ Le contrôle des données est un intérêt de l’auto-hébergement, pas une dis
 
 ## Actualité vérifiée le 25 octobre 2026
 
-Le serveur stable observé est [mosparo 1.5.12](https://github.com/mosparo/mosparo/releases/tag/v1.5.12), publié le 19 octobre 2026 ; le client embarqué est [PHP API client 2.0.1](https://github.com/mosparo/php-api-client/releases/tag/v2.0.1). Leurs numéros sont indépendants de la version 1.1.1 de ce paquet.
+Le serveur stable observé est [mosparo 1.5.12](https://github.com/mosparo/mosparo/releases/tag/v1.5.12), publié le 19 octobre 2026 ; le client embarqué est [PHP API client 2.0.1](https://github.com/mosparo/php-api-client/releases/tag/v2.0.1). Leurs numéros sont indépendants de la version 1.1.2 de ce paquet.
 
 La [version 1.5](https://mosparo.io/2026/06/17/mosparo-version-1-5-released/) a notamment apporté des règles de soumission et les formulaires à étapes. Cela ne signifie pas que tout formulaire tiers à étapes soit automatiquement pris en charge ici. L’article [The detection rate](https://mosparo.io/2026/08/04/the-detection-rate/) rappelle que l’efficacité dépend des règles. Les évolutions annoncées pour 1.6 ne sont pas présentées comme des fonctions de la version installée.

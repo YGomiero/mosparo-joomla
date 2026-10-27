@@ -1,23 +1,19 @@
-Package display name aligned with the JED listing: **mosparo**. Protection behaviour is unchanged.
-
-Nom affiché harmonisé avec la fiche JED : **mosparo**. Fonctionnement de la protection inchangé.
-
 ## Français
 
-Consulter [l’historique des changements](https://github.com/YGomiero/mosparo-joomla/blob/main/CHANGELOG.md) et le [guide d’installation](https://github.com/YGomiero/mosparo-joomla/blob/main/docs/installation.fr.md).
+Après une vérification mosparo échouée ou expirée sur un formulaire Joomla valide, la connexion revient au formulaire avec un message explicatif, sur le site comme dans l’administration. Il suffit de renseigner à nouveau les identifiants et de refaire la vérification. La destination locale prévue après connexion est conservée, y compris pour confirmer un compte lié à une identité externe.
 
-**Prérequis : une instance mosparo déjà installée, configurée et accessible, avec un projet et ses clés.** Le paquet Joomla n’installe pas le serveur mosparo. Joomla 6.x et PHP 8.3+ sont requis.
+La connexion reste bloquée tant que la vérification n’a pas réussi. Les requêtes sans jeton Joomla valide restent refusées ; aucun mot de passe ni ancien jeton mosparo n’est conservé ou transmis dans l’adresse de retour.
 
-[Installer mosparo](https://documentation.mosparo.io/docs/category/installation).
+Installer **pkg_mosparo-1.1.2.zip**, ou utiliser le gestionnaire de mises à jour Joomla. Les réglages sont conservés. Une instance mosparo déjà configurée, Joomla 6 et PHP 8.3+ restent nécessaires.
 
-Installer le fichier **pkg_mosparo-VERSION.zip** joint, et non les archives « Source code ». `update.xml` alimente le gestionnaire de mises à jour Joomla ; `SHA256SUMS` permet de vérifier le téléchargement. Sauvegarder le site avant mise à niveau.
+[Installation et dépannage](https://github.com/YGomiero/mosparo-joomla/blob/main/docs/installation.fr.md) · [Signaler un problème](https://github.com/YGomiero/mosparo-joomla/issues)
 
 ## English
 
-Read the [changelog](https://github.com/YGomiero/mosparo-joomla/blob/main/CHANGELOG.md) and [installation guide](https://github.com/YGomiero/mosparo-joomla/blob/main/docs/installation.en.md).
+When mosparo verification fails or expires on a valid Joomla form, site and administrator sign-ins return to a fresh login form with clear guidance. Re-enter your credentials and repeat verification. Safe local post-login destinations are retained, including external-account confirmation.
 
-**An installed, configured and reachable mosparo instance, with a project and its keys, is required.** This Joomla package does not install the mosparo server. Requires Joomla 6.x and PHP 8.3+.
+Authentication remains blocked until verification succeeds. Requests without a valid Joomla form token remain refused; passwords and old mosparo tokens are never stored or forwarded in the return address.
 
-[Install mosparo](https://documentation.mosparo.io/docs/category/installation).
+Install **pkg_mosparo-1.1.2.zip**, or use Joomla’s extension updater. Existing settings are retained. A configured mosparo instance, Joomla 6 and PHP 8.3+ are still required.
 
-Install the attached **pkg_mosparo-VERSION.zip**, not GitHub's “Source code” archives. `update.xml` supplies Joomla's updater; `SHA256SUMS` verifies the download. Back up the site before upgrading.
+[Installation and troubleshooting](https://github.com/YGomiero/mosparo-joomla/blob/main/docs/installation.en.md) · [Report an issue](https://github.com/YGomiero/mosparo-joomla/issues)

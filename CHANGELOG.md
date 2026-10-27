@@ -1,5 +1,11 @@
 # Changelog / Historique
 
+## 1.1.2 — 2026-10-27
+
+- Return legitimate site and administrator login forms to a fresh form with translated guidance after failed or expired mosparo verification. Authentication remains blocked; invalid Joomla form tokens and non-POST requests remain refused.
+- Preserve safe local post-login destinations, including an external-account confirmation, without storing or forwarding passwords or old mosparo tokens.
+- Après un échec ou une expiration mosparo, retour au formulaire de connexion avec un message clair. Les contrôles de sécurité restent actifs et la destination locale prévue est conservée.
+
 ## 1.1.1 — 2026-10-25
 
 - Align the installed package name, update feed and release title with the JED listing name: mosparo. No change to protection behaviour.

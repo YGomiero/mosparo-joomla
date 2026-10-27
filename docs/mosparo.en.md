@@ -65,6 +65,6 @@ Self-hosting provides control over processing, but does not replace a privacy po
 
 ## News checked on 25 October 2026
 
-The observed stable server is [mosparo 1.5.12](https://github.com/mosparo/mosparo/releases/tag/v1.5.12), published on 19 October 2026. The bundled [PHP API client is 2.0.1](https://github.com/mosparo/php-api-client/releases/tag/v2.0.1). Their versions are independent of this integration's 1.1.1.
+The observed stable server is [mosparo 1.5.12](https://github.com/mosparo/mosparo/releases/tag/v1.5.12), published on 19 October 2026. The bundled [PHP API client is 2.0.1](https://github.com/mosparo/php-api-client/releases/tag/v2.0.1). Their versions are independent of this integration's 1.1.2.
 
 [mosparo 1.5](https://mosparo.io/2026/06/17/mosparo-version-1-5-released/) added submission rules and multi-step forms; this does not automatically make every third-party multi-step form compatible with this package. [The detection rate](https://mosparo.io/2026/08/04/the-detection-rate/) explains the importance of rules. Features announced for 1.6 are not described here as already available.

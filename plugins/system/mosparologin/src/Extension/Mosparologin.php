@@ -12,11 +12,13 @@ use Joomla\CMS\Event\Application\BeforeCompileHeadEvent;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Plugin\PluginHelper;
+use Joomla\CMS\Session\Session;
 use Joomla\Event\SubscriberInterface;
 use Joomla\Plugin\Captcha\Mosparo\Service\Renderer;
 use Joomla\Plugin\Captcha\Mosparo\Service\FormData;
 use Joomla\Plugin\Captcha\Mosparo\Service\Verifier;
 use Joomla\Registry\Registry;
+use Yann\Plugin\System\Mosparologin\Service\LoginRecovery;
 
 \defined('_JEXEC') or die;
 
@@ -71,6 +73,14 @@ final class Mosparologin extends CMSPlugin implements SubscriberInterface
             $valid = false;
         }
         if (!$valid) {
+            // Only a genuine Joomla form may queue feedback. Never continue to authentication.
+            if ($input->getMethod() === 'POST' && $input->post->get(Session::getFormToken(), '', 'alnum') === '1') {
+                $app->enqueueMessage(Text::_('PLG_SYSTEM_MOSPAROLOGIN_RETRY'), 'warning');
+                $app->redirect(LoginRecovery::url($app->isClient('administrator'),
+                    (string) $input->post->get('return', '', 'BASE64')), 303);
+                $app->close();
+                return;
+            }
             throw new \RuntimeException(Text::_('PLG_SYSTEM_MOSPAROLOGIN_REJECTED'), 403);
         }
     }

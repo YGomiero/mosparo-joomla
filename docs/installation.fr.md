@@ -10,7 +10,7 @@ Le serveur PHP doit disposer de cURL, JSON et des extensions nécessaires à Joo
 
 ## Installer le paquet
 
-Sauvegarder fichiers et base. Installer le ZIP `pkg_mosparo-1.1.1.zip` via l’installateur Joomla. Le paquet regroupe deux plugins et une seule source de mise à jour. Ne pas installer séparément les ZIP internes. La désinstallation s’effectue sur le paquet et retire les deux plugins ; elle ne supprime pas le projet sur le serveur mosparo.
+Sauvegarder fichiers et base. Installer le ZIP `pkg_mosparo-1.1.2.zip` via l’installateur Joomla. Le paquet regroupe deux plugins et une seule source de mise à jour. Ne pas installer séparément les ZIP internes. La désinstallation s’effectue sur le paquet et retire les deux plugins ; elle ne supprime pas le projet sur le serveur mosparo.
 
 Sur un site possédant déjà `captcha/mosparo` 1.0.2, l’élément et son espace de noms sont conservés pour permettre la mise à niveau. Contrôler les réglages après installation. Le site source utilisé pour le développement n’a pas été modifié.
 
@@ -51,7 +51,7 @@ Après réparation de mosparo ou des certificats, réactiver le plugin et refair
 
 - **Widget absent** : vérifier activation, options de protection, scripts bloqués et erreurs du navigateur. Une substitution de formulaire tiers peut demander une adaptation.
 - **Erreur après une case verte** : vérifier les clés, le certificat de confiance de PHP, l’accès sortant et les champs vérifiés. Dans mosparo, consulter la soumission et ses problèmes de vérification.
-- **Accès refusé 403** : revenir au formulaire et le recharger ; un jeton manquant ou invalide ne peut pas être réutilisé comme validation.
+- **Vérification échouée ou expirée à la connexion** : le formulaire se recharge avec une explication. Renseigner à nouveau ses identifiants et refaire la vérification mosparo. Aucune connexion n’est ouverte après le refus ; le mot de passe et les anciens jetons ne sont ni conservés ni retransmis. Si la session Joomla a elle-même expiré ou si la requête est invalide, un refus 403 reste possible : ouvrir de nouveau le formulaire.
 - **Un message légitime est bloqué** : examiner les règles et le score dans mosparo, puis ajuster la règle responsable.
 - **Configuration locale HTTPS** : installer une CA de confiance côté navigateur et PHP ; le champ CA évite de désactiver la vérification TLS dans le plugin.
 
