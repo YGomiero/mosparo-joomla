@@ -15,10 +15,11 @@ Requirements: PHP 8.3+, Composer 2, ZIP extension. Install the exact locked depe
 ```sh
 composer install --no-dev --prefer-dist --no-interaction
 php tools/build.php
+php tests/package-licenses.php
 php tests/run.php /path/to/joomla
 ```
 
-`dist/pkg_mosparo-1.1.1.zip` is the installable artifact. Runtime dependencies and original licences are included; upstream tests/documentation/development files are excluded. Source GitHub archives lack installed dependencies and the package's nested ZIPs. File ordering and ZIP timestamps are fixed; compare builds using the same PHP/ZIP toolchain.
+`dist/pkg_mosparo-1.1.3.zip` is the installable artifact. Runtime dependencies and original licences are included; upstream tests/documentation/development files are excluded. The builder adds full upstream MIT notices to dependency PHP headers in the ZIP only, leaving the Composer installation untouched. Unsupported dependency licences or missing licence texts stop the build. `tests/package-licenses.php` checks the actual nested ZIPs, licence notices, original source preservation and unchanged executable PHP tokens. Source GitHub archives lack installed dependencies and the package's nested ZIPs. File ordering and ZIP timestamps are fixed; compare builds using the same PHP/ZIP toolchain.
 
 Le constructeur produit le ZIP installable, le flux Joomla et la somme SHA-256. Les versions se trouvent dans les trois manifestes, le chargeur d’assets et la documentation. Le flux utilise un téléchargement versionné ; sa copie stable est un asset de la dernière release. Ne jamais remplacer silencieusement le ZIP d’une version publiée : créer une nouvelle version.
 

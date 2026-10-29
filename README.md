@@ -15,11 +15,11 @@
 
 This package connects Joomla to your [mosparo](https://mosparo.io) instance. It includes **CAPTCHA – mosparo** for contact forms and **System – mosparo: logins** for the core login page, Login modules and administrator password login. Manage rules, submissions and statistics in mosparo.
 
-Version **1.1.2** · Joomla **6.x**, PHP **8.3+** · Tested with Joomla **6.2.0**, PHP **8.3.30**, mosparo **1.5.12** · Official PHP client **2.0.1**.
+Version **1.1.3** · Joomla **6.x**, PHP **8.3+** · Tested with Joomla **6.2.0**, PHP **8.3.30**, mosparo **1.5.12** · Official PHP client **2.0.1**.
 
 ## Install
 
-1. Download **pkg_mosparo-1.1.2.zip** from the release. GitHub's “Source code” archive cannot be installed in Joomla.
+1. Download **pkg_mosparo-1.1.3.zip** from the release. GitHub's “Source code” archive cannot be installed in Joomla.
 2. Upload the package through **System → Install → Extensions**.
 3. Configure and enable **CAPTCHA – mosparo** with the project URL, UUID and both keys. Add the website domain to the project's allowed hosts.
 4. Select mosparo in the Contacts component CAPTCHA setting and test a contact submission.

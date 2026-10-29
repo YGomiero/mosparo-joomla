@@ -1,5 +1,11 @@
 # Changelog / Historique
 
+## 1.1.3 — 2026-10-29
+
+- Include explicit MIT licence notices and the original copyright/licence text in every bundled dependency PHP file, including Composer autoload files. Existing upstream notices and executable code are preserved.
+- Add a distribution check for nested ZIPs, licence headers, preserved upstream sources and unchanged executable PHP tokens. Package creation rejects unreviewed dependency licences.
+- Ajout des notices MIT et des copyrights d’origine dans les fichiers PHP des dépendances. Les licences et le fonctionnement de l’intégration restent inchangés ; un contrôle du paquet empêche la régression.
+
 ## 1.1.2 — 2026-10-27
 
 - Return legitimate site and administrator login forms to a fresh form with translated guidance after failed or expired mosparo verification. Authentication remains blocked; invalid Joomla form tokens and non-POST requests remain refused.

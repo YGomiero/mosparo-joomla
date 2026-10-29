@@ -4,7 +4,9 @@ $root = dirname(__DIR__);
 $version = (string) simplexml_load_file($root . '/pkg_mosparo.xml')->version;
 $out = $argv[1] ?? $root . '/dist';
 if (!is_dir($out)) mkdir($out, 0777, true);
-function zipTree(string $source, string $target): void {
+require_once __DIR__ . '/license-headers.php';
+$licenseNotices = dependencyLicenseNotices($root);
+function zipTree(string $source, string $target, array $licenseNotices): void {
     $zip = new ZipArchive();
     if ($zip->open($target, ZipArchive::CREATE | ZipArchive::OVERWRITE) !== true) throw new RuntimeException('Cannot open ZIP');
     $files = [];
@@ -16,7 +18,11 @@ function zipTree(string $source, string $target): void {
         $name = str_replace('\\', '/', substr($path, strlen($source) + 1));
         // Keep runtime code and original licences; omit upstream development-only assets.
         if (str_starts_with($name, 'dependencies/') && preg_match('~/(?:tests?|docs?|\\.github)/|/(?:\\.gitignore|\\.gitattributes|phpunit\\.xml(?:\\.dist)?|phpstan\\.neon(?:\\.dist)?)$~i', $name)) continue;
-        $zip->addFile($path, $name);
+        if (str_starts_with($name, 'dependencies/') && str_ends_with($name, '.php')) {
+            $zip->addFromString($name, dependencyPhpWithNotice($name, file_get_contents($path), $licenseNotices));
+        } else {
+            $zip->addFile($path, $name);
+        }
         $zip->setMtimeName($name, 1792886400);
     }
     $zip->close();
@@ -25,7 +31,7 @@ if (!is_file($root . '/plugins/captcha/mosparo/dependencies/autoload.php')) thro
 foreach (['captcha/mosparo', 'system/mosparologin'] as $plugin) {
     $manifest = simplexml_load_file($root . '/plugins/' . $plugin . '/' . basename($plugin) . '.xml');
     if ((string) $manifest->version !== $version) throw new RuntimeException('Package and plugin versions differ.');
-    zipTree($root . '/plugins/' . $plugin, $out . '/plg_' . str_replace('/', '_', $plugin) . '.zip');
+    zipTree($root . '/plugins/' . $plugin, $out . '/plg_' . str_replace('/', '_', $plugin) . '.zip', $licenseNotices);
 }
 $name = 'pkg_mosparo-' . $version . '.zip';
 $zip = new ZipArchive();
